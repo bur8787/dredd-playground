@@ -395,7 +395,7 @@ paths:
         schema:
           $ref: "#/definitions/User"
       responses:
-        default:
+        200:
           description: "successful operation"
   /user/createWithArray:
     post:
@@ -417,7 +417,7 @@ paths:
           items:
             $ref: "#/definitions/User"
       responses:
-        default:
+        200:
           description: "successful operation"
   /user/createWithList:
     post:
@@ -439,7 +439,7 @@ paths:
           items:
             $ref: "#/definitions/User"
       responses:
-        default:
+        200:
           description: "successful operation"
   /user/login:
     get:
@@ -490,7 +490,7 @@ paths:
       - "application/json"
       parameters: []
       responses:
-        default:
+        200:
           description: "successful operation"
   /user/{username}:
     get:
@@ -582,15 +582,19 @@ definitions:
       id:
         type: "integer"
         format: "int64"
+        example: 1
       petId:
         type: "integer"
         format: "int64"
+        example: 1
       quantity:
         type: "integer"
         format: "int32"
+        example: 1
       shipDate:
         type: "string"
         format: "date-time"
+        example: "2017-07-21"
       status:
         type: "string"
         description: "Order Status"
@@ -598,6 +602,7 @@ definitions:
         - "placed"
         - "approved"
         - "delivered"
+        example: "placed"
       complete:
         type: "boolean"
         default: false
@@ -609,8 +614,10 @@ definitions:
       id:
         type: "integer"
         format: "int64"
+        example: 1
       name:
         type: "string"
+        example: "John"
     xml:
       name: "Category"
   User:
@@ -619,22 +626,30 @@ definitions:
       id:
         type: "integer"
         format: "int64"
+        example: 1
       username:
         type: "string"
+        example: "Bob Smith"
       firstName:
         type: "string"
+        example: "Bob"
       lastName:
         type: "string"
+        example: "Smith"
       email:
         type: "string"
+        example: "info@smith.com"
       password:
         type: "string"
+        example: "p@ssw0rd"
       phone:
         type: "string"
+        example: "0120-117-117"
       userStatus:
         type: "integer"
         format: "int32"
         description: "User Status"
+        example: 1
     xml:
       name: "User"
   Tag:
@@ -643,8 +658,10 @@ definitions:
       id:
         type: "integer"
         format: "int64"
+        example: 1
       name:
         type: "string"
+        example: "favorite"
     xml:
       name: "Tag"
   Pet:
@@ -656,6 +673,7 @@ definitions:
       id:
         type: "integer"
         format: "int64"
+        example: 1
       category:
         $ref: "#/definitions/Category"
       name:
@@ -668,6 +686,7 @@ definitions:
           wrapped: true
         items:
           type: "string"
+          example: "type"
       tags:
         type: "array"
         xml:
@@ -682,6 +701,7 @@ definitions:
         - "available"
         - "pending"
         - "sold"
+        example: "available"
     xml:
       name: "Pet"
   ApiResponse:
@@ -690,10 +710,13 @@ definitions:
       code:
         type: "integer"
         format: "int32"
+        example: 1
       type:
         type: "string"
+        example: "type"
       message:
         type: "string"
+        example: "message"
 externalDocs:
   description: "Find out more about Swagger"
   url: "http://swagger.io"
