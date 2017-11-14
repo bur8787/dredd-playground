@@ -108,6 +108,7 @@ paths:
           - "sold"
           default: "available"
         collectionFormat: "multi"
+        x-example: "available"
       responses:
         200:
           description: "successful operation"
@@ -140,6 +141,7 @@ paths:
         items:
           type: "string"
         collectionFormat: "multi"
+        x-example: "tag"
       responses:
         200:
           description: "successful operation"
@@ -171,6 +173,7 @@ paths:
         required: true
         type: "integer"
         format: "int64"
+        x-example: 1
       responses:
         200:
           description: "successful operation"
@@ -200,16 +203,19 @@ paths:
         required: true
         type: "integer"
         format: "int64"
+        x-example: 1
       - name: "name"
         in: "formData"
         description: "Updated name of the pet"
         required: false
         type: "string"
+        x-example: "john"
       - name: "status"
         in: "formData"
         description: "Updated status of the pet"
         required: false
         type: "string"
+        x-example: "john"
       responses:
         405:
           description: "Invalid input"
@@ -231,12 +237,14 @@ paths:
         in: "header"
         required: false
         type: "string"
+        x-example: "key"
       - name: "petId"
         in: "path"
         description: "Pet id to delete"
         required: true
         type: "integer"
         format: "int64"
+        x-example: 1
       responses:
         400:
           description: "Invalid ID supplied"
@@ -264,11 +272,13 @@ paths:
         required: true
         type: "integer"
         format: "int64"
+        x-example: 1
       - name: "additionalMetadata"
         in: "formData"
         description: "Additional data to pass to server"
         required: false
         type: "string"
+        x-example: "metadata"
       - name: "file"
         in: "formData"
         description: "file to upload"
@@ -346,6 +356,7 @@ paths:
         maximum: 10.0
         minimum: 1.0
         format: "int64"
+        x-example: 1
       responses:
         200:
           description: "successful operation"
@@ -372,6 +383,7 @@ paths:
         type: "integer"
         minimum: 1.0
         format: "int64"
+        x-example: 1
       responses:
         400:
           description: "Invalid ID supplied"
@@ -457,11 +469,13 @@ paths:
         description: "The user name for login"
         required: true
         type: "string"
+        x-example: "bob"
       - name: "password"
         in: "query"
         description: "The password for login in clear text"
         required: true
         type: "string"
+        x-example: "p@ssw0rd"
       responses:
         200:
           description: "successful operation"
@@ -508,6 +522,7 @@ paths:
         description: "The name that needs to be fetched. Use user1 for testing. "
         required: true
         type: "string"
+        x-example: "john"
       responses:
         200:
           description: "successful operation"
@@ -532,6 +547,7 @@ paths:
         description: "name that need to be updated"
         required: true
         type: "string"
+        x-example: "bob"
       - in: "body"
         name: "body"
         description: "Updated user object"
@@ -558,6 +574,7 @@ paths:
         description: "The name that needs to be deleted"
         required: true
         type: "string"
+        x-example: "bob"
       responses:
         400:
           description: "Invalid username supplied"
